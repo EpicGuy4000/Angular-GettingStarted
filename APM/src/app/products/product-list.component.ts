@@ -59,7 +59,7 @@ export class ProductListComponent implements OnInit {
       "releaseDate": "October 15, 2018",
       "description": "Standard two-button video game controller",
       "price": 35.95,
-      "starRating": 4.6,
+      "starRating": 1.6,
       "imageUrl": "assets/images/xbox-controller.png"
     }
   ];

@@ -7,14 +7,15 @@ import {range} from "./range";
   selector: 'pm-star'
 })
 export class StarComponent implements OnChanges{
-  starWidth: number;
+  ratingWidth: number;
   @Input() rating: number;
 
-  readonly MAX_WIDTH: number = 75;
+  private readonly STAR_WIDTH: number = 15;
   private readonly MAX_RATING: number = 5;
+  readonly MAX_WIDTH: number = this.STAR_WIDTH * this.MAX_RATING;
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.starWidth = this.rating * this.MAX_WIDTH/this.MAX_RATING;
+    this.ratingWidth = this.rating * this.STAR_WIDTH;
   }
 
   starRatings(): number[] {
