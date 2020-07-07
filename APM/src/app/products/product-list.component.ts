@@ -13,6 +13,7 @@ export class ProductListComponent implements OnInit {
   pageTitle: string = "Product List!";
   imageWidth: number = 50;
   imageMargin: number = 2;s;
+  errorMessage: string;
 
   products: IProduct[] = [];
   private _listFilter: string;
@@ -40,8 +41,13 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.products = this._productService.getProducts();
-    this.listFilter = '';
+    this._productService.getProducts().subscribe({
+      next: products => {
+        this.products = products
+        this.filteredProducts = products;
+      },
+      error: err => this.errorMessage = err
+    });
   }
 
   onRatingClicked(message: string) : void {
