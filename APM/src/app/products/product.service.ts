@@ -1,8 +1,8 @@
-import { EventEmitter, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import {IProduct} from "./product";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
-import { catchError, filter, first, mergeAll, tap } from "rxjs/operators";
+import { catchError, filter, mergeAll, tap } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
